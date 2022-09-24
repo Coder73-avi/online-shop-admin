@@ -1,7 +1,18 @@
-import '../styles/globals.css'
+import "../styles/globalfonts.css";
+import "../styles/globalcolors.css";
+import "../styles/globals.css";
+
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

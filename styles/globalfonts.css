@@ -1,0 +1,27 @@
+@font-face {
+  font-family: Arial;
+  src: url("../fonts/Arial/arial.ttf");
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url("../fonts/Ubuntu/Ubuntu-B.ttf");
+}
+
+@font-face {
+  font-family: Popplins;
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: url("../fonts/Helvetica/Helvetica\ Neue\ W01\ 66\ Medium\ It.otf");
+}
+
+@font-face {
+  font-family: NeueHaas;
+  src: url("../fonts/HaasGroTesk/NeueHaasDisplayMediu.ttf");
+}
+@font-face {
+  font-family: Bulatto;
+  src: url("../fonts/Bulatto/Bulletto\ Killa.ttf");
+}

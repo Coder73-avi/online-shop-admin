@@ -1,0 +1,55 @@
+.report__icon {
+  background-color: rgb(236, 160, 59);
+  color: rgb(247, 243, 243);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0.3rem 0.2rem;
+  width: 40px;
+  height: 30px;
+  border-radius: 0.7rem;
+}
+
+.card:first-child > .report__icon {
+  background-color: rgb(92, 201, 59);
+}
+.card:last-child > .report__icon {
+  background-color: rgb(26, 87, 201);
+}
+
+.report__title {
+  font-size: 12px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #616060;
+}
+
+.report__data {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0.3rem 0;
+}
+
+.report__status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 11px;
+  font-weight: bold;
+  color: #616060;
+}
+
+.report__small__icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.report__small__icon > span {
+  font-size: 14px;
+}
