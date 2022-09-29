@@ -11,10 +11,10 @@ const AnalayticOverview = () => {
       </div>
 
       <div className="py-8 px-6 flex flex-row items-center gap-6">
-        <div className="text-sm font-semibold text-gray-700 flex flex-row justify-center items-center gap-2 px-3 py-2 bg-white rounded-md">
+        <div className="text-sm font-semibold text-gray-700 flex flex-row justify-center items-center gap-2 px-3 py-2  rounded-md">
           <span className="text-lg font-semibold">
             <AiOutlineCalendar />
-          </span>{" "}
+          </span>
           Today
         </div>
         <div className="text-sm text-gray-600 font-black">
@@ -22,7 +22,7 @@ const AnalayticOverview = () => {
         </div>
       </div>
 
-      <section className="grid md:grid-cols-4">
+      <section className="grid md:grid-cols-4 p-3">
         <div className="col-span-3">
           <LeftContain />
         </div>

@@ -10,6 +10,7 @@ import { GrFormClose } from "react-icons/gr";
 import DefaultImage from "components/DefaultImage";
 
 import demoImage from "images/demopictures/smartwatch.jpg";
+import { useRouter } from "next/router";
 
 const TableHeading = [
   "ID",
@@ -26,6 +27,7 @@ const ProductTable = () => {
   const [dropDownStatus, setDropDownStatus] = useState(false);
   const [optionName, setOptionName] = useState("Filter");
   const dropDownRef = useRef();
+  const router = useRouter();
 
   useEffect(() => {
     const handler = (e) => {
@@ -71,6 +73,9 @@ const ProductTable = () => {
             />
           </div>
         </div>
+        <div className={css.addNewProduct}>
+          <button>Add New Product</button>
+        </div>
       </div>
       <span
         className="font-bold text-gray-300 px-2"
@@ -80,14 +85,14 @@ const ProductTable = () => {
       </span>
 
       <div className="my-5 overflow-auto">
-        <table className="w-full text-gray-600 text-xs">
+        <table className="w-full text-gray-500 text-xs">
           <thead>
-            <tr className="bg-gray-300 rounded-lg">
+            <tr className="bg-orange-200 rounded-lg">
               {TableHeading.map((val, indx) => (
                 <th
                   key={indx}
                   scope="col"
-                  className="uppercase border-b border-t py-4 px-2 text-gray-700"
+                  className="uppercase border-b border-t py-4 px-2 text-orange-500"
                 >
                   {val}
                 </th>
@@ -101,7 +106,8 @@ const ProductTable = () => {
               .map((val, indx) => (
                 <tr
                   key={indx}
-                  className="text-center cursor-pointer hover:bg-gray-200"
+                  className="text-center cursor-pointer hover:bg-orange-200"
+                  onClick={() => router.push("/products/1234")}
                 >
                   <td className="py-2">{indx + 1}</td>
                   <td className="py-2">

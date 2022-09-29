@@ -8,6 +8,7 @@
   display: block;
   background-color: var(--sidebar-color);
   color: white;
+  z-index: 5;
   /* border-radius: 0 0.8rem 0.8rem 0; */
 }
 
@@ -86,7 +87,7 @@
 }
 .nav__link:hover,
 .dropDown__link:hover {
-  color: white;
+  color: rgb(129, 129, 129);
 }
 
 .dropDown {

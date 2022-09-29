@@ -1,17 +1,17 @@
-import ProductInfo from "components/ProductInfo";
+import Categorys from "components/Categorys";
 import Sidebar from "components/Sidebar";
 import Head from "next/head";
 
-export default function products() {
+export default function categorys() {
   return (
     <>
       <Head>
-        <title>Products</title>
+        <title>Categorys</title>
       </Head>
       <main className="">
         <Sidebar />
         <section className="side-contians ">
-          <ProductInfo />
+          <Categorys />
         </section>
       </main>
     </>

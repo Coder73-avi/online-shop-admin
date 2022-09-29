@@ -15,16 +15,24 @@ const RightContain = () => {
               className="flex flex-row justify-between items-center border-b pb-4 "
             >
               <div className="">
-                <h1 className="font-bold text-base text-gray-900">
+                <h1 className="font-bold text-sm text-gray-600">
                   Adidas NMD...
                 </h1>
-                <h4 className="capitalize text-xs font-bold text-gray-500">
+                <h4
+                  className="capitalize font-bold text-gray-400"
+                  style={{ fontSize: "10px" }}
+                >
                   Canada
                 </h4>
               </div>
               <div className="">
-                <h1 className="font-bold text-base text-orange-400">$250.00</h1>
-                <h4 className="text-xs font-bold text-gray-500">05 min ago</h4>
+                <h1 className="font-bold text-sm text-orange-400">$250.00</h1>
+                <h4
+                  className="text-xs font-bold text-gray-400"
+                  style={{ fontSize: "10px" }}
+                >
+                  05 min ago
+                </h4>
               </div>
             </div>
           ))}

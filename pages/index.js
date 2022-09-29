@@ -11,7 +11,7 @@ export default function Home() {
         <title>Admin Panel</title>
         <meta name="description" content="Online Shop Admin Panel" />
       </Head>
-      <main className="p-3">
+      <main className="">
         <Sidebar />
         <section className="side-contians">
           <AnalayticOverview />

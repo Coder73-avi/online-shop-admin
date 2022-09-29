@@ -56,6 +56,7 @@
   border-radius: 0 0 0.5rem 0.5rem;
   transform: scale(0);
   transition: all 0.3s ease-in;
+  z-index: 100;
 }
 .show__dropDown {
   transform: scale(1);
@@ -71,4 +72,19 @@
 
 .listStyle:hover {
   background-color: #464739;
+}
+
+.addNewProduct > button {
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.8rem;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: rgb(78, 76, 76);
+  border-radius: 0.3rem;
+}
+.addNewProduct > button:hover {
+  background-color: orange;
+  border-color: orange;
+  color: white;
 }

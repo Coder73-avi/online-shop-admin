@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  background-color: rgb(247, 244, 244);
+  background-color: var(--bg-body);
 }
 
 a {
@@ -24,7 +24,7 @@ a {
 }
 
 .side-contians {
-  margin-left: 270px;
+  margin-left: 280px;
   /* width: 76%; */
   border-radius: 1rem;
   /* background-color: white; */

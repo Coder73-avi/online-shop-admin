@@ -1,0 +1,77 @@
+.addNew {
+  padding: 0.5rem 0.8rem;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(5, 5, 201);
+  color: white;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.addNew > svg {
+  font-size: 16px;
+}
+
+.searchField > input {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 14px;
+  outline: none;
+  color: darkgray;
+}
+
+.btnGroup {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.singleBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.4rem;
+  font-weight: 400;
+  color: grey;
+  position: relative;
+}
+.singleBtn > svg {
+  font-size: 16px;
+}
+
+.singleBtn:hover .status__dropDown {
+  display: block;
+}
+
+.status__dropDown {
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 0;
+  width: 100%;
+  text-align: left;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border-radius: 0 0 0.3rem 0.3rem;
+  z-index: 100;
+}
+
+.status__dropDown > li {
+  padding: 0.5rem 0.7rem;
+}
+
+.status__dropDown > li:hover {
+  color: rgb(7, 7, 216);
+  background-color: rgba(189, 186, 186, 0.473);
+}

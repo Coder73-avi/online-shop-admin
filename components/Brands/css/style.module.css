@@ -1,0 +1,17 @@
+.addNew {
+  padding: 0.5rem 0.8rem;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: rgb(5, 5, 201);
+  color: white;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+.addNew > svg {
+  font-size: 16px;
+}
+

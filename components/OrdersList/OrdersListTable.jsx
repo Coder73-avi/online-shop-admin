@@ -55,7 +55,7 @@ const OrdersListTable = () => {
           <thead className="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b">
             <tr>
               {theadData.map((val, indx) => (
-                <th scope="col" className="py-4 px-6 text-red-800" key={indx}>
+                <th scope="col" className="py-4 px-6 text-gray-700" key={indx}>
                   {val}
                 </th>
               ))}
@@ -65,13 +65,15 @@ const OrdersListTable = () => {
             {ordersData.map((val, indx) => (
               <tr
                 key={indx}
-                className="bg-white odd:text-gray-500 even:text-gray-700 font-semibold  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-600 cursor-pointer"
+                className="bg-white odd:text-gray-500 even:text-gray-700  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-600 cursor-pointer"
               >
-                <td className="py-2 px-6 text-red-800">{val?.id}</td>
+                <td className="py-2 px-6 text-yellow-600">{val?.id}</td>
                 <td className="py-2 px-6  font-bold">{val?.customer}</td>
                 <td className="py-2 px-6">{val?.order}</td>
-                <td className="py-2 px-6 ">{val?.delivery__date}</td>
-                <td className="py-4 px-6">{val?.price}</td>
+                <td className="py-2 px-6 text-yellow-600">
+                  {val?.delivery__date}
+                </td>
+                <td className="py-4 px-6 font-bold ">{val?.price}</td>
                 <td className="py-4 px-6 ">
                   <button
                     className={css.status__btn}
