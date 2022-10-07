@@ -1,0 +1,45 @@
+.toastDiv {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(50%);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  z-index: 200;
+  border-radius: 0.5rem;
+  min-width: 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  animation: toast 3s infinite;
+  opacity: 0;
+}
+.success {
+  background-color: rgb(9, 173, 37);
+}
+.error {
+  background-color: rgb(151, 9, 9);
+}
+
+@keyframes toast {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  50% {
+    top: 1.5rem;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.icon {
+}

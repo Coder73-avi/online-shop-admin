@@ -19,13 +19,14 @@ export const menuList = [
   },
   { name: "Brands", path: "/brands", icon: <HiOutlineClipboardList /> },
 
+  
   {
-    name: "Analytics",
+    name: "Pages",
     icon: <AiOutlinePieChart />,
     dropDownList: [
-      { name: "Dropdown 1", path: "/" },
-      { name: "Dropdown 2", path: "/" },
-      { name: "Dropdown 3", path: "/" },
+      { name: "Home", path: "/pages/home" },
+      { name: "About", path: "/pages/about" },
+      { name: "Contact", path: "/pages/contact" },
     ],
   },
 

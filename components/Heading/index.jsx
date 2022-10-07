@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const Heading = ({ title, button, addnew }) => {
   const router = useRouter();
   return (
-    <div className="flex flex-row justify-between items-center px-6 py-8">
+    <div className="flex flex-row justify-between items-center px-6 py-5">
       <h1 className="font-bold text-xl ">{title || "None"}</h1>
       <button className={css.addNew} onClick={() => router.push(addnew || "/")}>
         <AiOutlinePlus />

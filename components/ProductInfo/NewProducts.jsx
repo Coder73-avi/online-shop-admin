@@ -19,12 +19,24 @@ const NewProducts = () => {
     setActiveValue(router.query?.q || "");
   }, [router.query]);
 
+
   return (
     <>
-      {router.query.productid}
-      <h1 className="font-bold text-xl py-8 ">
-        {router.query.productid == "new" ? "Add New " : "Update "} Product
-      </h1>
+      <div className="py-4 flex flex-row justify-between">
+        <h1 className="font-bold text-xl  ">
+          {router.query.productid == "new" ? "Add New " : "Update "} Product
+        </h1>
+        <Link
+          href={
+            router.query.productid !== "new" ? "/products/new" : "/products"
+          }
+        >
+          <button className={css.addNew}>
+            {router.query.productid !== "new" ? "Add New " : "Product List"}
+          </button>
+        </Link>
+      </div>
+
       {router.query?.productid !== "new" && (
         <nav className={` ${css.product__status__nav}`}>
           <Link href={`/products/${router.query?.productid}?q=overview`}>

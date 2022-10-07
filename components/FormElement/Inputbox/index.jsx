@@ -3,6 +3,7 @@ import Label from "../Label";
 
 const Inputbox = ({
   title,
+  name,
   type,
   classNameDiv,
   classNameInput,
@@ -17,6 +18,7 @@ const Inputbox = ({
       <input
         type={type || "text"}
         id={title?.toLowerCase()}
+        name={name}
         value={value}
         className={
           classNameInput ||

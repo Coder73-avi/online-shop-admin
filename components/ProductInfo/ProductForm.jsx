@@ -26,16 +26,17 @@ const ProductForm = () => {
     console.log(selectedImage);
   }, [selectedImage]);
 
+  const [productDetails, setProductDetails] = useState({});
+
   return (
     <>
-
       <div className="rounded-lg bg-white px-6 py-8">
         <form
           className="grid md:grid-cols-5 gap-8"
           encType="multipart/form-data"
         >
           <div className={`col-span-2`}>
-            <Inputbox title="Product Title" classNameDiv={"mb-0"} />
+            <Inputbox title="Product Title" classNameDiv={"mb-0"} name="title" />
             <p
               id="helper-text-explanation"
               className="mt-2 text-xs text-gray-500 dark:text-gray-400 mb-6 ml-2"
@@ -44,9 +45,9 @@ const ProductForm = () => {
             </p>
 
             <div className="grid grid-cols-3 gap-2">
-              <Inputbox title="SKU" />
-              <Inputbox title="Color" />
-              <Inputbox title="Size" />
+              <Inputbox title="SKU" name="sku" />
+              <Inputbox title="Color" name="color" />
+              <Inputbox title="Size" name="size" />
             </div>
             <Inputbox title="Category" placeholder="Category" />
             <Textarea title="Discription" row={6} />
@@ -80,7 +81,7 @@ const ProductForm = () => {
                 </div>
               ) : (
                 <div className="grid md:grid-cols-4 gap-2">
-                  {Array(5)
+                  {Array(1)
                     .fill()
                     .map((val, indx) => (
                       <div key={indx} className={css.image__wrapper}>
@@ -106,8 +107,8 @@ const ProductForm = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-10">
-              <Inputbox title="Add Size" />
-              <Inputbox title="Product Date" value={newDate.dotDate} />
+              <Inputbox title="Add Size" name="size" />
+              <Inputbox title="Product Date" value={newDate.dotDate} name="date" />
             </div>
 
             <div className={css.btn__group}>

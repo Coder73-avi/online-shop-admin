@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-
-module.exports = nextConfig
+  images: {
+    domains: ["localhost"],
+  },
+};
+const withImages = require("next-images");
+module.exports = withImages();
+module.exports = nextConfig;
