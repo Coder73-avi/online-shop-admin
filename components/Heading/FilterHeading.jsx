@@ -30,7 +30,6 @@ const FilterHeading = ({
           {status} <HiChevronDown />
           <ul className={css.status__dropDown}>
             <li onClick={() => setStatus("all")}>All</li>
-            <li onClick={() => setStatus("pendding")}>Pendding</li>
             <li onClick={() => setStatus("published")}>Published</li>
             <li onClick={() => setStatus("unpublished")}>Unpublished</li>
             <li onClick={() => setStatus("draft")}>Draft</li>

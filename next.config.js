@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      "localhost",
+      // "localhost",
       "online-shop-api001.herokuapp.com",
       "api.raeelaproduction.com",
     ],
@@ -14,6 +14,5 @@ const nextConfig = {
     URL: "http://api.raeelaproduction.com",
   },
 };
-const withImages = require("next-images");
-module.exports = withImages();
+
 module.exports = nextConfig;

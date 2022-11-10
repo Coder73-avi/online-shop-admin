@@ -20,17 +20,3 @@ export default function products() {
     </>
   );
 }
-
-// export const getServerSideProps = async () => {
-//   try {
-//     const res = await axios.get("/getproducts/5");
-//     const data = res.data.getData;
-//     // console.log(data);
-//     return {
-//       props: { productList: data, pagination: res.data?.paginationNum },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//     return { props: { productList: [], pagination: 1 } };
-//   }
-// };
