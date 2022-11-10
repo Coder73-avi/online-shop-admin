@@ -13,6 +13,12 @@
   gap: 0.3rem;
 }
 
+.btn:hover:disabled {
+  cursor: not-allowed;
+  background-color: white;
+  color: gray;
+}
+
 .optionBtn {
   border: 1px solid #ccc;
   padding: 0.4rem 0.8rem;

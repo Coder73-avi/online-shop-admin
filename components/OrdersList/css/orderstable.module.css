@@ -2,6 +2,7 @@
   /* border: 2px solid #fdab1385; */
   border-radius: 0.3rem;
   padding: 0.3rem 0.8rem;
+  text-transform: capitalize;
 }
 
 .search__filled {

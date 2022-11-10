@@ -1,34 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./css/style.module.css";
 
 import { HiOutlineSwitchVertical, HiChevronDown } from "react-icons/hi";
 
-const FilterHeading = ({addnew}) => {
+const FilterHeading = ({
+  setText,
+  text = "",
+  status,
+  setStatus,
+  numberOfItems,
+  setNumberOfItems,
+}) => {
+  const [selectedNumberOfItems, setSelectedNumberOfItems] = useState("Show 20");
+
   return (
     <div className="flex flex-row justify-between items-center border-b pb-6">
       <div className={css.searchField}>
         <input
           type="search"
           name=""
+          value={text}
+          onChange={(e) => setText(e.target.value)}
           id=""
           placeholder="Search product by title"
         />
       </div>
       <div className={css.btnGroup}>
         <button className={css.singleBtn}>
-          Status <HiChevronDown />
+          {status} <HiChevronDown />
           <ul className={css.status__dropDown}>
-            <li>Pendding</li>
-            <li>Active</li>
-            <li>Draft</li>
+            <li onClick={() => setStatus("all")}>All</li>
+            <li onClick={() => setStatus("pendding")}>Pendding</li>
+            <li onClick={() => setStatus("published")}>Published</li>
+            <li onClick={() => setStatus("unpublished")}>Unpublished</li>
+            <li onClick={() => setStatus("draft")}>Draft</li>
           </ul>
         </button>
         <button className={css.singleBtn}>
-          Show 20 <HiChevronDown />
+          Show {numberOfItems} <HiChevronDown />
           <ul className={css.status__dropDown}>
-            <li>Show 50</li>
-            <li>Show 100</li>
-            <li>Show 150</li>
+            <li onClick={() => setNumberOfItems(50)}>Show 50</li>
+            <li onClick={() => setNumberOfItems(100)}>Show 100</li>
+            <li onClick={() => setNumberOfItems(150)}>Show 150</li>
           </ul>
         </button>
         <button

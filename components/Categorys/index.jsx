@@ -21,7 +21,6 @@ const Categorys = ({ categoryList }) => {
 
       <Heading title="Category Information" addnew={"/categorys?q=form"} />
       <div className="w-[95%] mx-auto bg-white p-6 rounded-lg shadow-xl my-4">
-        <FilterHeading />
         <div className="flex flex-row flex-wrap gap-3 py-4">
           {categoryList.map((val, indx) => (
             <div
@@ -29,7 +28,7 @@ const Categorys = ({ categoryList }) => {
               className={css.categoryList__items}
               onClick={() => router.push(`/categorys?q=form&id=${val.id}`)}
             >
-              <div className="flex flex-row items-center justify-start gap-4 bg-transparent z-20 relative font-bold">
+              <div className="flex flex-row items-center justify-start gap-4 bg-transparent z-20 relative font-bold capitalize">
                 <AiFillFolder />
                 {val.name}
               </div>

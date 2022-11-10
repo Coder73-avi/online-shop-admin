@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import css from "./css/orderstable.module.css";
 
-import { ordersData } from "./ordersData";
+import moment from "moment";
 import { RiEditBoxLine } from "react-icons/ri";
 import { GrDocumentDownload } from "react-icons/gr";
 import { BsFilter } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineEye } from "react-icons/ai";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-const OrdersListTable = () => {
+const OrdersListTable = ({ orderList }) => {
+  const router = useRouter();
   const [searchKey, setSearchKey] = useState("");
+  const [filterVal, setFilterVal] = useState("");
+
+  const queryValue = useCallback(() => {
+    if (router.query.hasOwnProperty("q")) return setFilterVal(router.query.q);
+    return setFilterVal("");
+  }, [router.query]);
+  useEffect(() => {
+    queryValue();
+  }, [queryValue]);
+
   return (
     <>
       <div className="flex flex-row gap-10 items-center">
@@ -55,44 +68,57 @@ const OrdersListTable = () => {
           <thead className="text-xs text-gray-700 bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b">
             <tr>
               {theadData.map((val, indx) => (
-                <th scope="col" className="py-4 px-6 text-gray-700" key={indx}>
+                <th scope="col" className="py-4 px-2 text-gray-700" key={indx}>
                   {val}
                 </th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {ordersData.map((val, indx) => (
-              <tr
-                key={indx}
-                className="bg-white odd:text-gray-500 even:text-gray-700  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-600 cursor-pointer"
-              >
-                <td className="py-2 px-6 text-yellow-600">{val?.id}</td>
-                <td className="py-2 px-6  font-bold">{val?.customer}</td>
-                <td className="py-2 px-6">{val?.order}</td>
-                <td className="py-2 px-6 text-yellow-600">
-                  {val?.delivery__date}
-                </td>
-                <td className="py-4 px-6 font-bold ">{val?.price}</td>
-                <td className="py-4 px-6 ">
-                  <button
-                    className={css.status__btn}
-                    id={val.status.toLowerCase()}
-                  >
-                    {val?.status}
-                  </button>
-                </td>
-                <td className="py-4 px-6  flex flex-row justify-between items-center gap-1">
-                  {val?.payment__method}{" "}
-                  <span className="text-base font-bold hover:text-red-900">
-                    <AiOutlineEye />
-                  </span>
-                  <span className="text-base font-bold hover:text-red-900">
-                    <RiEditBoxLine />
-                  </span>
-                </td>
-              </tr>
-            ))}
+            {orderList
+              ?.filter((item) => {
+                const status = item.status?.toLowerCase();
+                if (filterVal == "" || filterVal?.toLowerCase() == "all-orders")
+                  return item;
+                if (status == filterVal?.toLowerCase()) return item;
+              })
+              ?.map((val, indx) => (
+                <Link href={`/orders/${val?.collection__id}`} key={indx}>
+                  <tr className="bg-white odd:text-gray-500 even:text-gray-700  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-600 cursor-pointer">
+                    <td className="py-2 px-2 text-yellow-600">
+                      {val?.collection__id}
+                    </td>
+                    <td className="py-2 px-2  font-bold min-w-[200px]">
+                      {val?.fullname}
+                    </td>
+                    <td className="py-2 px-2 capitalize">{val?.location}</td>
+                    <td className="py-2 px-2 text-yellow-600 min-w-[150px]">
+                      {moment.utc(new Date(val?.date)).fromNow()}
+                    </td>
+                    <td className="py-4 px-2 ">
+                      <button
+                        className={css.status__btn}
+                        id={val.status.toLowerCase()}
+                      >
+                        {val?.status}
+                      </button>
+                    </td>
+                    <td className="py-4 px-2 flex flex-row justify-between items-center gap-1">
+                      {val?.payment__method || " Credit Card "}
+                      <Link href={`/orders/${val?.collection__id}`}>
+                        <a className="text-base font-bold hover:text-red-900">
+                          <AiOutlineEye />
+                        </a>
+                      </Link>
+                      <Link href={`/orders/${val?.collection__id}`}>
+                        <a className="text-base font-bold hover:text-red-900">
+                          <RiEditBoxLine />
+                        </a>
+                      </Link>
+                    </td>
+                  </tr>
+                </Link>
+              ))}
           </tbody>
         </table>
       </div>
@@ -103,9 +129,8 @@ const OrdersListTable = () => {
 const theadData = [
   "Order Id",
   "Customer",
-  "Order",
-  "Delivery Date",
-  "Delivery Pricing",
+  "Address",
+  "Order Date",
   "Delivery Status",
   "Payment Method",
 ];

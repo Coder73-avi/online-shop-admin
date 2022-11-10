@@ -1,16 +1,12 @@
 import React from "react";
 import css from "./css/style.module.css";
 
-import {  AiFillEye } from "react-icons/ai";
 import { BsGraphUp, BsGraphDown } from "react-icons/bs";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
-import { RiShoppingBag3Line } from "react-icons/ri";
 import LineChartBox from "components/Charts/LineChartBox";
 
-const LeftContain = () => {
+const LeftContain = ({ chartData, ordersData }) => {
   return (
     <>
-   
       {/* reports */}
       <div className="flex flex-row gap-4 px-6">
         {chartData.map(({ icon, title, data, upStatus, change }, indx) => (
@@ -40,33 +36,9 @@ const LeftContain = () => {
       </div>
 
       {/* linecharts for sales status */}
-      <LineChartBox />
+      <LineChartBox ordersData={ordersData} />
     </>
   );
 };
-
-export const chartData = [
-  {
-    icon: <FaRegMoneyBillAlt />,
-    title: "Revenue",
-    data: "$ 8,670.19",
-    upStatus: true,
-    change: "5.32",
-  },
-  {
-    icon: <AiFillEye />,
-    title: "Total views",
-    data: "15,567",
-    upStatus: false,
-    change: "5.30",
-  },
-  {
-    icon: <RiShoppingBag3Line />,
-    title: "Total order",
-    data: "1,456",
-    upStatus: true,
-    change: "5.31",
-  },
-];
 
 export default LeftContain;

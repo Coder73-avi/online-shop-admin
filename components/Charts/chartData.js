@@ -83,7 +83,7 @@ export const ordersData = [
   },
   {
     date: "Mar 7 ",
-    value:1050,
+    value: 1050,
     category: "Orders",
   },
   {

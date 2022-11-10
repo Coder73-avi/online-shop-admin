@@ -37,20 +37,20 @@ a {
   color: rgb(230, 21, 21);
 }
 
-#resititute {
+#processing {
   background-color: #fdab132c;
   color: #ffa600;
 }
-#complate {
+#completed {
   background-color: #11e4462c;
   color: #0db13e;
 }
-#continue {
+#shipping {
   background-color: #3613fd2c;
   color: #1900ff;
 }
 
-#canceled {
+#cancelled {
   background-color: #fd13132c;
   color: #ff0800;
 }

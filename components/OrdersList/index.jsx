@@ -1,21 +1,45 @@
+import { FullScreenLoader } from "components/Loading";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import css from "./css/style.module.css";
+import axios from "controller/axios";
+
 import OrdersListTable from "./OrdersListTable";
 
 const OrderStatusList = [
   "All Orders",
+  "Processing",
+  "Shipping",
   "Completed",
-  "Continuing",
-  "Resititute",
   "Canceled",
 ];
 
 const OrdersList = () => {
   const router = useRouter();
+  const [orderList, setOrderList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const getOrders = useCallback(async () => {
+    try {
+      const req = await axios.get("/getallorders");
+      const ordersList = req.data;
+
+      if (req.status == 200) {
+        setOrderList(ordersList);
+        return setLoading(false);
+      }
+    } catch (error) {
+      console.error(error);
+      return setLoading(false);
+    }
+  }, []);
+  useEffect(() => {
+    getOrders();
+  }, [getOrders]);
+
   return (
     <>
+      {loading ? <FullScreenLoader /> : null}
       <div className="pt-6 bg-white flex flex-row gap-3 items-center">
         <h1 className="text-xl font-bold text-gray-900">Orders Details</h1>
         <div className={css.smallIcon}>?</div>
@@ -50,7 +74,7 @@ const OrdersList = () => {
       </nav>
 
       <div className="py-8">
-        <OrdersListTable />
+        <OrdersListTable orderList={orderList} />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import axios from "controller/axios";
 
 import Sidebar from "components/Sidebar";
 import NewProducts from "components/ProductInfo/NewProducts";

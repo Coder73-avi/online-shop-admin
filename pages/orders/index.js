@@ -1,6 +1,7 @@
 import OrdersList from "components/OrdersList";
 import Sidebar from "components/Sidebar";
 import Head from "next/head";
+import axios from "controller/axios";
 
 export default function orders() {
   return (
@@ -12,10 +13,12 @@ export default function orders() {
         <Sidebar />
         <section className="side-contians  py-4 px-2">
           <div className="bg-white rounded-lg overflow-hidden px-6">
-            <OrdersList />
+            <OrdersList  />
           </div>
         </section>
       </main>
     </>
   );
 }
+
+

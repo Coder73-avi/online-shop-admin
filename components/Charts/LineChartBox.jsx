@@ -1,22 +1,13 @@
 import React from "react";
 import { Line } from "@ant-design/plots";
-import { salesData, ordersData, chartData } from "./chartData.js";
 
-const LineChartBox = () => {
-  const newData = salesData.concat(ordersData);
+const LineChartBox = ({ ordersData }) => {
   const config = {
-    data: newData,
+    data: ordersData,
     padding: "auto",
     xField: "date",
-    yField: "value",
-    seriesField: "category",
-
-    xAxis: {
-      // type: "timeCat",
-      tickCount: 10,
-    },
-
-    color: ["orange", "#2ca02c", ""],
+    yField: "price",
+    color: "orange",
     legend: {
       layout: "horizontal",
       position: "top",
@@ -28,7 +19,7 @@ const LineChartBox = () => {
   return (
     <>
       <div className="p-6">
-        <h1 className="text-xl font-bold text-center py-6">Sales Chart</h1>
+        <h1 className="text-xl font-bold text-center py-6">Orders Chart</h1>
         <div>
           <Line {...config} />
         </div>

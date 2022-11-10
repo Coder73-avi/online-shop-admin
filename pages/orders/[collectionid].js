@@ -1,6 +1,7 @@
 import OrderInfo from "components/OrdersList/OrderInfo";
 import Sidebar from "components/Sidebar";
 import Head from "next/head";
+import axios from "controller/axios";
 
 export default function orderid() {
   return (

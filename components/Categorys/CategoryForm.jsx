@@ -23,7 +23,7 @@ const CategoryForm = ({ router }) => {
     if (getData.status == 200) {
       const { name, searchtag, imagesrc } = getData.data[0];
       setCategoryname(name);
-      setCategorySearchTag(JSON.parse(searchtag));
+      setCategorySearchTag(searchtag);
       if (imagesrc !== "") {
         setCategoryimage(`http://localhost:4001/` + imagesrc);
       } else {
@@ -93,7 +93,7 @@ const CategoryForm = ({ router }) => {
     }
   };
 
-  console.log(typeof categoryimage, categoryimage);
+  // console.log(typeof categoryimage, categoryimage);
 
   return (
     <div className={css.categoryFormDiv}>
@@ -146,7 +146,6 @@ const CategoryForm = ({ router }) => {
               ) : (
                 "Choose Image for category"
               )}
-              
             </label>
             <input
               type="file"
