@@ -10,8 +10,8 @@ const nextConfig = {
     ],
   },
   env: {
-    URL: "http://localhost:4001",
-    // "URL":"http://api.raeelaproduction.com",
+    // URL: "http://localhost:4001",
+    URL: "http://api.raeelaproduction.com",
   },
 };
 const withImages = require("next-images");
