@@ -10,7 +10,7 @@ export default function customerid() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">{/* <Categorys /> */}</section>
+        <section className="side-contains ">{/* <Categorys /> */}</section>
       </main>
     </>
   );

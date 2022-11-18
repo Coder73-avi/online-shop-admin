@@ -11,7 +11,7 @@ export default function orderid() {
       </Head>
       <main className="p-3">
         <Sidebar />
-        <section className="side-contians  py-4 px-2">
+        <section className="side-contains  py-4 px-2">
           <div className=" px-4">
             <OrderInfo />
           </div>

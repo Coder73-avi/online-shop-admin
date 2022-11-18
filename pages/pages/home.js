@@ -10,7 +10,7 @@ export default function home() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">
+        <section className="side-contains ">
           <Home />
         </section>
       </main>

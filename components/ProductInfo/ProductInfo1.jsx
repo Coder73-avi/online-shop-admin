@@ -12,6 +12,8 @@ import moment from "moment";
 import { useState, useEffect, useCallback } from "react";
 import { FullScreenLoader } from "components/Loading";
 import Link from "next/link";
+import { formatingNumber } from "controller/otherFunctions";
+import Pagination from "components/Pagination";
 
 const ProductInfo1 = () => {
   const router = useRouter();
@@ -187,7 +189,7 @@ const ProductInfo1 = () => {
                         </div>
                       </td>
                       <td className="px-2 py-3 text-orange-400">
-                        Rs. {val?.price}
+                        Rs. {formatingNumber(val?.price)}
                       </td>
                       <td className="px-2 py-3">
                         <div className={`capitalize text-blue-600 font-bold`}>
@@ -207,6 +209,14 @@ const ProductInfo1 = () => {
                             <BsThreeDots />
                           </button>
                           <ul className={css.dropDown__actionListDiv}>
+                            <li
+                              onClick={() =>
+                                router.push(`/reviews/${val?.pid}`)
+                              }
+                              className={css.dropDown__actionList}
+                            >
+                              Reviews
+                            </li>
                             <li
                               onClick={() =>
                                 router.push(`/products/${val?.pid}?q=update`)
@@ -231,30 +241,7 @@ const ProductInfo1 = () => {
           </div>
 
           {/* pagenation */}
-          <div className="flex flex-row items-center justify-end my-4">
-            <div className={css.pagenationDiv}>
-              <Link href={`/products?page=${pageNumber - 1}`}>
-                <button disabled={pageNumber <= 1 ? true : false}>Prev</button>
-              </Link>
-              {/* <button className={css.active}>{pagination || 0}</button> */}
-              {Array(pagination || 1)
-                .fill()
-                .map((val, indx) => (
-                  <Link href={`/products?page=${indx + 1}`} key={indx}>
-                    <button
-                      className={pageNumber == indx + 1 ? css.active : ""}
-                    >
-                      {indx + 1}
-                    </button>
-                  </Link>
-                ))}
-              <Link href={`/products?page=${pageNumber + 1}`}>
-                <button disabled={pageNumber >= pagination ? true : false}>
-                  Next
-                </button>
-              </Link>
-            </div>
-          </div>
+          <Pagination pagination={pagination} link={"/products"} />
         </div>
       </div>
     </>

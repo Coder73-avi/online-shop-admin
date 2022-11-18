@@ -12,7 +12,7 @@ export default function productid() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians px-8 py-6">
+        <section className="side-contains px-8 py-6">
           <NewProducts />
         </section>
       </main>

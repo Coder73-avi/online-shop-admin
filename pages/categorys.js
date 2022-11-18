@@ -12,7 +12,7 @@ export default function categorys({ categoryList }) {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">
+        <section className="side-contains ">
           <Categorys categoryList={categoryList} />
         </section>
       </main>

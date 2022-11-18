@@ -10,7 +10,7 @@ export default function brands() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">
+        <section className="side-contains ">
           <Brands />
         </section>
       </main>

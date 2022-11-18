@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians">
+        <section className="side-contains">
           <AnalayticOverview />
         </section>
       </main>

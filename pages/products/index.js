@@ -12,7 +12,7 @@ export default function products() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">
+        <section className="side-contains ">
           <ProductInfo1 />
           {/* <ProductInfo /> */}
         </section>

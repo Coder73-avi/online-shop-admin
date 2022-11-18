@@ -28,6 +28,7 @@ const FilterHeading = ({
       <div className={css.btnGroup}>
         <button className={css.singleBtn}>
           {status} <HiChevronDown />
+        
           <ul className={css.status__dropDown}>
             <li onClick={() => setStatus("all")}>All</li>
             <li onClick={() => setStatus("published")}>Published</li>

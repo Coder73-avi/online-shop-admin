@@ -25,12 +25,11 @@ const CategoryForm = ({ router }) => {
       setCategoryname(name);
       setCategorySearchTag(searchtag);
       if (imagesrc !== "") {
-        setCategoryimage(`http://localhost:4001/` + imagesrc);
+        setCategoryimage(imagesrc);
       } else {
         setCategoryimage("");
       }
     }
-    console.log(getData);
   }, [router.query]);
 
   useEffect(() => {
@@ -129,7 +128,7 @@ const CategoryForm = ({ router }) => {
           <div className="my-4">
             <label
               htmlFor="file"
-              className=" relative h-20 w-full text-xs text-gray-500 cursor-pointer border-2 border-dashed flex flex-col justify-center items-center"
+              className=" relative h-40 w-44 mx-auto text-xs text-gray-500 cursor-pointer border-2 border-dashed flex flex-col justify-center items-center"
             >
               {categoryimage.length !== 0 ? (
                 <Image

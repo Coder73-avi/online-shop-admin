@@ -4,7 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: [
-      // "localhost",
+      "localhost",
       "online-shop-api001.herokuapp.com",
       "api.raeelaproduction.com",
     ],

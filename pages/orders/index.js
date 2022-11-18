@@ -11,14 +11,12 @@ export default function orders() {
       </Head>
       <main className="p-3">
         <Sidebar />
-        <section className="side-contians  py-4 px-2">
+        <section className="side-contains  py-4 px-2">
           <div className="bg-white rounded-lg overflow-hidden px-6">
-            <OrdersList  />
+            <OrdersList />
           </div>
         </section>
       </main>
     </>
   );
 }
-
-

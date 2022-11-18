@@ -10,7 +10,7 @@ export default function reviews() {
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contians ">
+        <section className="side-contains ">
           <Reviews />
         </section>
       </main>
