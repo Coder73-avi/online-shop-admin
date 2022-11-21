@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Link from "next/link";
+import { formatingNumber } from "controller/otherFunctions";
 
 const RightContain = ({ orderHistory }) => {
   return (
@@ -25,7 +26,7 @@ const RightContain = ({ orderHistory }) => {
               </div>
               <div className="">
                 <h1 className="font-bold text-sm text-orange-400">
-                  Rs. {val?.price}
+                  Rs. {formatingNumber(val?.price)}
                 </h1>
                 <h4
                   className="text-xs font-bold text-gray-400"

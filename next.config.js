@@ -15,4 +15,14 @@ const nextConfig = {
   },
 };
 
+const withVideos = require("next-videos");
+
+module.exports = withVideos({
+  assetPrefix: ["http://localhost", "http://api.raeelaproduction.com"],
+  basePath: ".",
+
+  webpack(config, options) {
+    return config;
+  },
+});
 module.exports = nextConfig;

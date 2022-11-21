@@ -21,7 +21,7 @@ const LeftContain = ({ chartData, ordersData }) => {
             <div className={css.report__title}>{title || "(None)"}</div>
             <div className={css.report__data}> {data || "0"}</div>
             <div className={css.report__status}>
-              <div
+              {/* <div
                 className={`${css.report__small__icon} ${
                   upStatus ? "green" : "red"
                 }`}
@@ -29,7 +29,7 @@ const LeftContain = ({ chartData, ordersData }) => {
                 <span>{upStatus ? <BsGraphUp /> : <BsGraphDown />}</span>
                 {change}%
               </div>
-              <div>from Last week</div>
+              <div>from Last week</div> */}
             </div>
           </div>
         ))}

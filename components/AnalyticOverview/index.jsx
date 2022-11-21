@@ -9,6 +9,7 @@ import { RiShoppingBag3Line } from "react-icons/ri";
 import { AiFillEye } from "react-icons/ai";
 
 import { FullScreenLoader } from "components/Loading";
+import { formatingNumber } from "controller/otherFunctions";
 
 const AnalayticOverview = () => {
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,7 @@ const AnalayticOverview = () => {
     {
       icon: <FaRegMoneyBillAlt />,
       title: "Revenue",
-      data: "Rs. " + totalRevenue,
+      data: "Rs. " + formatingNumber(totalRevenue),
       upStatus: true,
       change: "5.32",
     },

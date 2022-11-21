@@ -6,11 +6,11 @@ export default function home() {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Home Page</title>
       </Head>
       <main className="">
         <Sidebar />
-        <section className="side-contains ">
+        <section className="side-contains  p-4">
           <Home />
         </section>
       </main>

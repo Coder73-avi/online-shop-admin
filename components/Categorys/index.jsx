@@ -7,10 +7,9 @@ import { useRouter } from "next/router";
 import { AiFillFolder } from "react-icons/ai";
 import Heading from "components/Heading";
 import FilterHeading from "components/Heading/FilterHeading";
-import Toastify from "components/Toastify";
 
-import defaultimage from "images/defaultimages/noimage.jpg";
 import Image from "next/image";
+import DefaultImage from "components/DefaultImage";
 
 const Categorys = ({ categoryList }) => {
   const router = useRouter();
@@ -19,33 +18,29 @@ const Categorys = ({ categoryList }) => {
     <>
       {router.query?.q == "form" && <CategoryForm router={router} />}
 
-      <Heading title="Category Information" addnew={"/categorys?q=form"} />
+      <Heading
+        title="Category Information"
+        button={"Add New"}
+        addnew={"/categorys?q=form"}
+      />
       <div className="w-[95%] mx-auto bg-white p-6 rounded-lg shadow-xl my-4">
-        <div className="flex flex-row flex-wrap gap-3 py-4">
-          {categoryList.map((val, indx) => (
-            <div
-              key={indx}
-              className={css.categoryList__items}
-              onClick={() => router.push(`/categorys?q=form&id=${val.id}`)}
-            >
-              <div className="flex flex-row items-center justify-start gap-4 bg-transparent z-20 relative font-bold capitalize">
-                <AiFillFolder />
-                {val.name}
+        <div className="grid md:grid-cols-4 gap-4">
+          {categoryList.map((val, indx) => {
+            return (
+              <div
+                className="flex flex-col justify-center items-center gap-4 border p-4 cursor-pointer"
+                key={indx}
+                onClick={() => router.push(`/categorys?q=form&id=${val.id}`)}
+              >
+                <div className="relative w-40">
+                  <DefaultImage src={val?.imagesrc} alt={val?.originalname} />
+                </div>
+                <div className="font-bold text-blue-800 capitalize">
+                  {val?.name}
+                </div>
               </div>
-              {/* <Image
-                src={
-                  val.imagesrc !== ""
-                    ? `http://localhost:4001/${val.imagesrc}`
-                    : defaultimage
-                }
-                alt="category-bg"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center"
-                className="z-10 opacity-70"
-              /> */}
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>

@@ -94,7 +94,11 @@ const ProductInfo1 = () => {
   return (
     <>
       {loading ? <FullScreenLoader /> : null}
-      <Heading title="Products List" addnew="/products/new" />
+      <Heading
+        title="Products List"
+        button={"Add New"}
+        addnew="/products/new"
+      />
 
       <div className="px-6">
         <div className="bg-white px-6 py-6 rounded-lg shadow-sm">

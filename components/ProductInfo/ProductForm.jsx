@@ -21,7 +21,6 @@ const dataObj = {
   discount__price: "",
   category: "uncategorized",
   short__discription: "",
-  more__info: "",
   on__sale: "1",
   status: "draft",
 };
@@ -33,7 +32,7 @@ const ProductForm = ({ status }) => {
   const [files, setFiles] = useState([]);
   const [imageLists, setImageLists] = useState([]);
   const [data, setData] = useState({ ...dataObj });
-  const [moreInfo, setMoreInfo] = useState("");
+  const [text, setText] = useState("");
   const [sizeOfProduct, setSizeOfProduct] = useState("");
   const [ProductSizes, setProductSizes] = useState([]);
   const [editIndx, setEditIndx] = useState(null);
@@ -82,10 +81,10 @@ const ProductForm = ({ status }) => {
           discount__price,
           category,
           short__discription,
-          more__info,
           on__sale,
           status,
         });
+        setText(more__info);
         setProductSizes(JSON.parse(product__options));
         setImageLists(images);
         // console.log(data);
@@ -93,6 +92,7 @@ const ProductForm = ({ status }) => {
       }
       setData({ ...dataObj });
       setProductSizes([]);
+      setText("");
       setFiles([]);
       setImageLists([]);
       return setLoading(false);
@@ -157,6 +157,7 @@ const ProductForm = ({ status }) => {
       e.preventDefault();
       setLoading(true);
       const formData = new FormData();
+      formData.append("more__info", text);
 
       const dataKeys = Object.keys(data);
       for (let i = 0; i < dataKeys.length; i++) {
@@ -181,6 +182,7 @@ const ProductForm = ({ status }) => {
 
       if (create.status == 201) {
         setData({ ...dataObj });
+        changeData(Math.random());
         setFiles([]);
         setLoading(false);
       }
@@ -197,6 +199,7 @@ const ProductForm = ({ status }) => {
       e.preventDefault();
       const { productid } = router.query;
       const formData = new FormData();
+      formData.append("more__info", text);
 
       const dataKeys = Object.keys(data);
       for (let i = 0; i < dataKeys.length; i++) {
@@ -312,7 +315,7 @@ const ProductForm = ({ status }) => {
 
             <div className="mb-4">
               <Label title="More Info" />
-              <TextEditor />
+              <TextEditor text={text} setText={setText} refresh={changeData} />
             </div>
           </div>
           <div className={`col-span-2`}>
